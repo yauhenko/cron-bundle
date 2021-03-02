@@ -1,7 +1,8 @@
 {
 	"name": "yauhenko/cron-bundle",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"type": "symfony-bundle",
+	"minimum-stability": "stable",
 	"description": "Cron for Symfony console commands",
 	"license": "proprietary",
 	"require": {
