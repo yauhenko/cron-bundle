@@ -1,0 +1,11 @@
+parameters:
+    command_dir: '%kernel.project_dir%/src/Command'
+    console_path: '%kernel.project_dir%/bin/console'
+    app_namespace: 'App'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+    Yauhenko\CronBundle\Command\CronCommand: ~
+    Yauhenko\CronBundle\Service\CronService: ~

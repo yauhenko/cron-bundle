@@ -1,0 +1,26 @@
+{
+	"name": "yauhenko/cron-bundle",
+	"version": "0.1.0",
+	"type": "symfony-bundle",
+	"description": "Cron for Symfony console commands",
+	"license": "proprietary",
+	"require": {
+		"php": "^8.0"
+	},
+	"require-dev": {
+	},
+	"config": {
+		"sort-packages": true
+	},
+	"autoload": {
+		"psr-4": {
+			"Yauhenko\\CronBundle\\": "src/"
+		}
+	},
+	"extra": {
+		"symfony": {
+			"allow-contrib": false,
+			"require": "5.2.*"
+		}
+	}
+}
