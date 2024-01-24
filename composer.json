@@ -1,14 +1,17 @@
 {
 	"name": "yauhenko/cron-bundle",
-	"version": "0.1.1",
 	"type": "symfony-bundle",
 	"minimum-stability": "stable",
 	"description": "Cron for Symfony console commands",
 	"license": "proprietary",
 	"require": {
-		"php": "^8.0"
+		"php": "^8.2"
 	},
 	"require-dev": {
+		"symfony/http-kernel": "^6.4|^7",
+		"symfony/console": "^6.4|^7",
+		"symfony/config": "^6.4|^7",
+		"symfony/dependency-injection": "^6.4|^7"
 	},
 	"config": {
 		"sort-packages": true
@@ -21,7 +24,7 @@
 	"extra": {
 		"symfony": {
 			"allow-contrib": false,
-			"require": "5.2.*"
+			"require": "6.4.*|7"
 		}
 	}
 }

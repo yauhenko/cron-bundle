@@ -2,6 +2,7 @@
 
 namespace Yauhenko\CronBundle\Command;
 
+use Symfony\Component\Console\Attribute\AsCommand;
 use Yauhenko\CronBundle\Service\CronService;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputOption;
@@ -10,6 +11,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
+#[AsCommand('cron:setup')]
 class CronCommand extends Command {
 
 	protected ParameterBagInterface $params;
@@ -19,7 +21,7 @@ class CronCommand extends Command {
 		$this->params = $params;
 	}
 
-	protected function configure() {
+	protected function configure(): void {
 		$this->setName('cron:setup');
 		$this->setDescription('Set cron');
 		$this->addOption('remove', 'r', InputOption::VALUE_NONE, 'Remove crontab');

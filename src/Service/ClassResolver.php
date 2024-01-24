@@ -5,12 +5,14 @@ namespace Yauhenko\CronBundle\Service;
 use ReflectionClass;
 use RecursiveIteratorIterator;
 use RecursiveDirectoryIterator;
+use ReflectionException;
 
 class ClassResolver {
 
-	/**
-	 * @return ReflectionClass[]
-	 */
+    /**
+     * @return ReflectionClass[]
+     * @throws ReflectionException
+     */
 	public function getReflections(string $dir, string $appNamespace = 'App'): array {
 		$result = $this->getNames($dir, $appNamespace);
 		array_walk($result, function(string &$class) {

@@ -3,6 +3,7 @@
 namespace Yauhenko\CronBundle\Service;
 
 use ReflectionClass;
+use ReflectionException;
 use ReflectionMethod;
 use ReflectionProperty;
 use Yauhenko\CronBundle\Attributes\Cron;
@@ -15,7 +16,6 @@ class CronService {
 	protected string $dir;
 	protected string $appNamespace;
 	protected ParameterBagInterface $params;
-	protected ClassResolver $classResolver;
 
 	public function __construct(ParameterBagInterface $params) {
 		$this->crontab = shell_exec('crontab -l') ?? '';
@@ -25,7 +25,10 @@ class CronService {
 		$this->params = $params;
 	}
 
-	public function update(bool $removeOnly = false): void {
+    /**
+     * @throws ReflectionException
+     */
+    public function update(bool $removeOnly = false): void {
 		$patternBegin = '#section:' . $this->id . ':begin';
 		$patternEnd = '#section:' . $this->id . ':end';
 		$crontab = $patternBegin . PHP_EOL . '#' . $this->dir . PHP_EOL;
